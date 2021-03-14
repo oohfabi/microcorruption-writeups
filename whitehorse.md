@@ -108,15 +108,15 @@ after playing around with the debugger I noticed that my password buffer starts 
 
 > read sp
 
-3c82:   4242 4242 0000 0000  BBBB....|
+3c82:   4242 4242 0000 0000  BBBB....
 
-3c8a:   0000 0000 0000 0000  ........|
+3c8a:   0000 0000 0000 0000  ........
 
-3c92:   0000 0000 0000 0000  ........|
+3c92:   0000 0000 0000 0000  ........
 
-3c9a:   0000 0000 0000 0000  ........|
-        ^^
-the `stack pointer` is here
+3c9a:   0000 0000 0000 0000  ........
+
+the `stack pointer` is now here
 
 so the `ret` will jump to the address at the 17-18th position of the password buffer 
 
