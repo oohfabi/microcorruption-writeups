@@ -95,19 +95,27 @@ I first asked myself what my payload should look like so I looked at the passwor
 after playing around with the debugger I noticed that my password buffer starts at `3c72`
 
 > read sp
+ 
 3c6a:   0200 723c 3000 1245  ..r<0..E
+
 3c72:   4242 4242 4242 4242  BBBBBBBB
+
 3c7a:   4242 4242 4242 4242  BBBBBBBB
+
 3c82:   4242 4242 0000 0000  BBBB....
 
 ( I entered 20 B's )
 
 > read sp
-3c82:   4242 4242 0000 0000  BBBB....
-3c8a:   0000 0000 0000 0000  ........
-3c92:   0000 0000 0000 0000  ........
-3c9a:   0000 0000 0000 0000  ........
-        
+
+3c82:   4242 4242 0000 0000  BBBB....|
+
+3c8a:   0000 0000 0000 0000  ........|
+
+3c92:   0000 0000 0000 0000  ........|
+
+3c9a:   0000 0000 0000 0000  ........|
+        ^^
 the `stack pointer` is here
 
 so the `ret` will jump to the address at the 17-18th position of the password buffer 
